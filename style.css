@@ -7,17 +7,22 @@ font-family: 'Roboto Serif', serif; */
   margin: 0;
   padding: 0;
   font-family: "Roboto";
+  -webkit-font-smoothing: antialiased;
 }
 
-body{
+body {
   max-width: 100vw;
+  scroll-behavior: smooth;
 }
 
 .section-navbar {
   width: 100%;
   background-color: #ffc017;
   border-bottom: 1px solid rgb(28, 28, 28);
+  position: -webkit-sticky;
   position: sticky;
+  top: 0;
+  transition: 0.5s;
 }
 
 .nav-container-fluid {
@@ -53,6 +58,10 @@ body{
   margin-right: 12px;
 }
 
+#get-started {
+  transition: 0.5s;
+}
+
 .button-v1 {
   border-radius: 99em;
   background-color: rgb(28, 28, 28);
@@ -73,116 +82,176 @@ body{
   padding: 0 33px;
 }
 
-.header-text{
+.header-text {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
-.header-text > h1{
+.header-text > h1 {
   font-size: 100px;
   color: rgb(28, 28, 28);
 }
 
-.header-text > p{
+.header-text > p {
   font-size: 24px;
   margin: 10px 0 50px;
 }
 
-.header-text > button{
+.header-text > button {
   width: 240px;
   font-size: 20px;
   margin-bottom: 20px;
 }
 
+.header-img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
 .header-img > img {
   border-radius: 50%;
   width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
   max-width: 40vw;
 }
 
-.trending-container{
+.trending-container {
   padding: 0 33px;
 }
 
-.section-trending{
+.section-trending {
   padding-bottom: 50px;
   margin-bottom: 50px;
   border-bottom: 1px solid rgb(220, 220, 220);
 }
 
-.trending{
+.trending {
   margin-bottom: 10px;
   margin-left: 4px;
 }
 
-.trending > span{
+.trending > span {
   margin-left: 10px;
 }
 
-.blog-col{
+.blog-col {
   display: flex;
 }
 
-.blog-number{
+.blog-number {
   font-size: 36px;
   color: #e0e0e0;
   font-weight: 600;
   margin-right: 20px;
 }
 
-.blog-info{
+.blog-info {
   padding: 12px 0 0 0;
 }
 
-.blog-author{
+.blog-author {
   display: flex;
   margin-bottom: 10px;
 }
 
-.blog-author > img{
+.blog-author > img {
   width: 20px;
-  height: fit-content;
+  height: 20px;
+  object-fit: cover;
   margin-right: 10px;
   border-radius: 50%;
 }
 
-.blog-author > h5{
+.blog-author > h5 {
   font-size: 14px;
   font-weight: 600;
 }
 
-.blog-title{
+.blog-title {
   font-size: 16px;
   font-weight: 700;
 }
 
-.description-small{
+.description-small {
   font-weight: 300;
   font-size: 13px;
 }
 
-.articles-container{
+.articles-container {
   padding: 0 33px;
 }
 
-.article-title{
+.article-col {
+  margin-bottom: 60px;
+}
+
+.article-title {
   font-size: 19px;
   font-weight: 700;
 }
 
-.article-intro{
+.article-intro {
   font-size: 16px;
   color: #767676;
 }
 
+.article-img > img {
+  height: 150px;
+}
 
+.side-tags {
+  border-bottom: 1px solid rgb(208, 208, 208);
+}
 
+.side-tags > p {
+  font-weight: 600;
+  font-size: 17px;
+}
 
+.side-tags > div {
+  margin-bottom: 15px;
+}
 
+.tag-button {
+  border: 1px solid #f2f2f2;
+  background-color: #f2f2f2;
+  padding: 5px 15px;
+  border-radius: 99em;
+  margin: 0 3px;
+  text-decoration: none;
+  color: rgb(28, 28, 28);
+  font-size: 14px;
+  font-weight: 500;
+  transition: 0.1s ease;
+}
 
+.tag-button:hover {
+  background-color: rgb(208, 208, 208);
+}
 
-@media (max-width: 991px) {
+.side-tags > a {
+  color: rgb(21, 145, 21);
+  text-decoration: none;
+  font-size: 15px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
+.side-tags > a:hover {
+  color: rgb(28, 28, 28);
+}
+
+.fixed-section {
+  position: fixed;
+  top: 80px;
+  right: 0px;
+}
+
+@media (max-width: 992px) {
   #navbarNav {
     position: inherit;
     right: auto;
@@ -192,7 +261,7 @@ body{
     margin-bottom: 5px;
   }
 
-  .header-text > h1{
+  .header-text > h1 {
     font-size: 40px;
     font-weight: 600;
   }
@@ -206,6 +275,10 @@ body{
   }
 
   .header-img > img {
+    display: none;
+  }
+
+  .side-tags-col {
     display: none;
   }
 }
